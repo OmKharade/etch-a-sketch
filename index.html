@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch A Sketch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Press+Start+2P&display=swap');
+      </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="navbar">
+        <h2 class="heading">Etch A Sketch</h2>
+    </div>
+    <div class="main">
     <div class="grid"></div>
+    </div>
+    <div class="toolbar">
+        <button class="toolbarBtn " id="toggle-grid-lines">
+            <span class="toolbarBtnTxt">Show Grid</span></button>
+        <button class="toolbarBtn" id="toggle-eraser">
+            <span class="toolbarBtnTxt">Erase</button>
+        <button class="toolbarBtn" id="toggle-lighten">
+            <span class="toolbarBtnTxt">Lighten</button>
+
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
