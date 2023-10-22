@@ -82,3 +82,129 @@ body{
     padding: 1.3rem 1.8rem;
     margin:0
 }
+
+.color-settings{
+    display: none;
+    background-color: white;
+    width: 200px;
+    height: 365.8px;
+    position: absolute;
+    bottom: 100px;
+    padding: 15px;
+    border-radius: 10px;
+    flex-direction: column;
+    box-sizing: content-box;
+}
+
+.saturation-lightness-picker{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.sl-handle{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+    margin-top: -5px;
+    background-color: transparent;
+    z-index: 4;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #0000001a,inset 0 0 0 1px #0000001a;
+    outline: 4px solid white;
+    box-sizing: content-box;
+}
+
+.sl-white,.sl-black,.sl-color{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.sl-white{
+    background: linear-gradient(to right,#ffffff 0%,rgba(255,255,255,0) 100%);
+    z-index: 1;
+    border-radius: 6px;
+    outline: 1px solid rgba(0,0,0,.1);
+    outline-offset: -1px;
+}
+
+.sl-black{
+    background: linear-gradient(to bottom,transparent 0%,#000 100%);
+    z-index: 2;
+    border-radius: 6px 0 6px 6px;
+}
+
+.sl-color{
+    background: rgb(0, 166, 255);
+    z-index: 0;
+    border-radius: 6px;
+}
+
+.hue-picker{
+    width: 100%;
+    margin-top: 15px;
+    background: linear-gradient(to right,red 0%,#ff0 17%,lime 33%,cyan 50%,blue 66%,#f0f 83%,red 100%);
+    border: none;
+    outline: 1px solid rgba(0,0,0,.1);
+    outline-offset: -1px;
+    border-radius: 50px;
+    z-index: 3;
+    position: relative;
+    height: 12px;
+    display: flex;
+    align-items: flex-start;
+}
+.hue-handle{
+    appearance: none;
+    width: 100%;
+    margin: 0;
+    background: transparent;
+    outline: none;
+}
+
+.color-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    gap: .5rem;
+    justify-content: space-between;
+    width: 200px;
+}
+.color-info-label,.color-info-value{
+    padding: .2rem .4rem;
+    width: 100%;
+    color: var(--primary);
+    border-radius: 5px;
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+    font-size: 12px;
+}
+.selected-color-info{
+    border: none;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: .5rem;
+    outline: 1px solid rgba(0,0,0,.05);
+    outline-offset: -1px;
+    border-radius: 6px;
+    text-align: center;
+}
+.selected-color{
+    width: 100%;
+    height: 40px;
+    border-radius: 6px;
+    outline: 1px solid rgba(0,0,0,.05);
+    outline-offset: -1px;
+}

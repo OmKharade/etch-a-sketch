@@ -21,8 +21,27 @@
             <span class="toolbarBtnTxt">Show Grid</span></button>
         <button class="toolbarBtn" id="toggle-eraser">
             <span class="toolbarBtnTxt">Erase</button>
-        <button class="toolbarBtn" id="toggle-lighten">
-            <span class="toolbarBtnTxt">Lighten</button>
+        <button class="toolbarBtn" id="toggle-colors">
+
+            <div class="color-settings" >
+                <div class="saturation-lightness-picker">
+                    <div class="sl-handle" draggable="false"></div>
+                    <div class="sl-white"></div>
+                    <div class="sl-black"></div>
+                    <div class="sl-color"></div>
+                </div>
+                <div class="hue-picker">
+                    <input type="range" class="hue-handle" min="0" max="360" value="180">
+                </div>
+                <div class="color-info">
+                    <label class="color-info-label">
+                        HSL
+                    </label>
+                    <span class="color-info-value" ></span>
+                    <div class="selected-color"></div>
+                </div>
+            </div>
+            <span class="toolbarBtnTxt">Colors</button>
 
     </div>
     <script src="script.js"></script>

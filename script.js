@@ -1,9 +1,9 @@
 /* task list :
-1. configure buttons
-    1. show-grid
-    2. erase
-2. add hover and status effects
-3. fix css
+1. Select Colors
+    1. Saturation
+    2. Lightness
+    3. Hue
+
 */
 
 // select .grid
@@ -53,4 +53,49 @@ toggleEraser.addEventListener('click',()=>{
     isEraser = isEraser? false:true; // change eraser value (false <--> true)
     toggleEraser.classList.toggle('toolbarBtnToggled') // change button color
 })
+
+const toggleColorSettings = document.querySelector('#toggle-colors')
+const colorSettingsContainer = document.querySelector('.color-settings')
+toggleColorSettings.addEventListener('click',()=>{
+    colorSettingsContainer.style.display = 'flex'
+    toggleColorSettings.classList.toggle('toolbarBtnToggled')
+})
+
+let hueInput = document.querySelector('.hue-handle')
+let slColor = document.querySelector('.sl-color')
+let colorInfoTxt = document.querySelector('.color-info-value')
+hueInput.addEventListener('input',(e)=>{
+    hue = e.target.value
+    slColor.style.setProperty('background-color','hsl('+hue+',100%,50%')
+    colorInfoTxt.textContent = 'HSL('+hue+',100%,50%)'
+})
+
+const slHandle = document.querySelector('.sl-handle')
+
+draggable(slHandle)
+function draggable(el) {
+    el.addEventListener('mousedown', function(e) {
+      var offsetX = e.clientX - parseInt(window.getComputedStyle(this).left);
+      var offsetY = e.clientY - parseInt(window.getComputedStyle(this).top);
+      
+      function mouseMoveHandler(e) {
+        if((e.clientY - offsetY)<605){
+            el.style.top = (e.clientY - offsetY) + 'px';
+            el.style.left = (e.clientX - offsetX) + 'px';
+        }
+        else{
+            el.style.top = '605px';
+            el.style.left = (e.clientX - offsetX) + 'px';
+        }
+      }
+  
+      function reset() {
+        window.removeEventListener('mousemove', mouseMoveHandler);
+        window.removeEventListener('mouseup', reset);
+      }
+  
+      window.addEventListener('mousemove', mouseMoveHandler);
+      window.addEventListener('mouseup', reset);
+    });
+}
 
